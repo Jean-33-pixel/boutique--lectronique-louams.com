@@ -1,17 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NovaTech Boutique</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vente électronique — Ma Boutique</title>
+  <meta name="description" content="Boutique simple de vente électronique : téléphones, accessoires et plus.">
+  <meta property="og:image" content="assets/social-preview.jpg">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header><h1>Bienvenue sur NovaTech Boutique</h1></header>
-  <main>
-    <p>Découvrez nos montres et produits électroniques.</p>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="#">Vente électronique</a>
+      <button id="openCart">Panier (<span id="cartCount">0</span>)</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Bienvenue dans la boutique</h1>
+      <p>Ajoutez des articles au panier puis commandez par e-mail.</p>
+    </section>
+
+    <h2>Produits</h2>
+    <div id="grid" class="grid"></div>
   </main>
-  <footer>&copy; <span id="year"></span> NovaTech Boutique</footer>
-  <script src="script.js"></script>
+
+  <!-- Panier -->
+  <aside id="cart" class="cart" aria-hidden="true">
+    <div class="cart-header">
+      <h2>Votre panier</h2>
+      <button id="closeCart">×</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="line"><span>Total</span><strong id="cartTotal">0,00 €</strong></div>
+      <button id="checkoutEmail" class="cta">Commander par e-mail</button>
+      <button id="clearCart" class="link">Vider le panier</button>
+    </div>
+  </aside>
+  <div id="overlay" class="overlay" hidden></div>
+
+  <script src="assets/js/app.js" defer></script>
 </body>
 </html>
